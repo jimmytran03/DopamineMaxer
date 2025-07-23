@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "DopamineMaxer",
+  "version": "1.0.0",
+  "description": "Blocks short form content to improve productivity",
+  "permissions": ["webNavigation"],
+  "host_permissions": [
+    "*://www.tiktok.com/*",
+    "*://tiktok.com/*",
+    "*://www.youtube.com/shorts/*",
+    "*://youtube.com/shorts/*",
+    "*://www.instagram.com/reels/*",
+    "*://instagram.com/reels/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+  "16": "icon16.png",
+  "48": "icon48.png",
+  "128": "icon128.png"
+},
+"action": {
+  "default_icon": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "default_title": "DopamineMaxer"
+},
+  "web_accessible_resources": [{
+    "resources": ["blocked.html"],
+    "matches": ["<all_urls>"]
+  }],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*",
+        "*://youtube.com/*",
+        "*://www.instagram.com/*",
+        "*://instagram.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+} 
