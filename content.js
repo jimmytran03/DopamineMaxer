@@ -24,7 +24,7 @@ function checkAndBlock() {
 // Initial check
 checkAndBlock();
 
-// Monitor SPA navigation (history changes)
+// History Changes
 let lastUrl = location.href;
 new MutationObserver(() => {
   const url = location.href;
@@ -34,5 +34,5 @@ new MutationObserver(() => {
   }
 }).observe(document, {subtree: true, childList: true});
 
-// Also listen for popstate (back/forward navigation)
+// back/forward navigation
 window.addEventListener('popstate', checkAndBlock); 
