@@ -7,12 +7,8 @@ function isBlockedPath() {
 }
 
 function blockPage() {
-  // Option 1: Redirect to a blank page
+  // Redirect to a blank page
   window.location.replace('about:blank');
-  // Option 2: 
-  /*
-  Show funny image of ned flanders telling you to get back to work
-  */
 }
 
 function checkAndBlock() {
